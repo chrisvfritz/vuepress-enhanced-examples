@@ -24,8 +24,7 @@
     "not ie <= 8"
   ],
   "dependencies": {
-    "babylon": "6.18.x",
-    "lebab": "2.7.x",
+    "buble": "^0.19.3",
     "prettier": "1.13.x",
     "prismjs": "1.14.x",
     "strip-indent": "2.0.x"
@@ -38,7 +37,6 @@
     "@vue/cli-service": "3.0.0-beta.15",
     "@vue/eslint-config-prettier": "3.0.0-beta.15",
     "@vue/eslint-config-standard": "3.0.0-beta.15",
-    "babel-core": "7.0.0-bridge.0",
     "babel-loader": "8.0.0-beta.2",
     "cross-env": "5.1.x",
     "imagemin-lint-staged": "0.3.x",

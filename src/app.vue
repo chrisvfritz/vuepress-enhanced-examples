@@ -17,21 +17,23 @@ export default {
     "
     js="
       Vue.component('blog-posts', {
-        data: function () {
+        data() {
           return {
             posts: []
           }
         },
-        created: function () {
+        created() {
           fetch('https://jsonplaceholder.typicode.com/posts')
-            .then(function (response) {
-              return response.json()
-            })
-            .then(function (posts) {
+            .then(response => response.json())
+            .then(posts => {
               this.posts = posts
-            }.bind(this))
+            })
         },
-        template: '<div>[[ posts ]]</div>'
+        template: `
+          <div>
+            [[ posts ]]
+          </div>
+        `
       })
 
       new Vue({

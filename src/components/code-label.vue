@@ -42,8 +42,9 @@ export default {
 <style lang="scss" module>
 .label {
   position: absolute;
-  top: 0.4em;
-  right: 0.4em;
+  top: 0;
+  right: 0;
+  padding: 0.4em;
   font-size: 0.8em;
   line-height: 1;
   color: #aaa;

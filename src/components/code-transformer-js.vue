@@ -1,6 +1,5 @@
 <script>
-import lebab from 'lebab'
-// import recast from 'recast'
+import { transform } from 'buble/dist/buble-browser.es'
 import prettier from 'prettier/standalone'
 import prettierParserBabylon from 'prettier/parser-babylon'
 import store from '@store'
@@ -14,30 +13,24 @@ export default {
   },
   computed: {
     es5Code() {
-      return this.prettifyJs(this.code)
+      return this.prettifyJs(this.modernToEs5(this.code))
     },
     modernCode() {
-      return this.prettifyJs(this.modernizeEs5(this.code))
+      return this.prettifyJs(this.code)
     },
     transformedCode() {
       return this[`${store.jsStyle}Code`]
     },
   },
   methods: {
-    modernizeEs5(code) {
-      return lebab.transform(code, [
-        'let',
-        'arrow',
-        'for-of',
-        'for-each',
-        'arg-rest',
-        'arg-spread',
-        'obj-method',
-        'obj-shorthand',
-        'no-strict',
-        'exponent',
-        'multi-var',
-      ]).code
+    modernToEs5(code) {
+      return transform(code, {
+        target: { ie: 9 },
+        transforms: {
+          templateString: false,
+        },
+        namedFunctionExpressions: false,
+      }).code.replace(/this\$1/g, 'vm')
     },
     prettifyJs(code) {
       return prettier.format(code, {
