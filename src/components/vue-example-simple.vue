@@ -78,13 +78,16 @@ export default {
   },
   computed: {
     processedHtml() {
-      return this.fixInterpolations(this.html)
+      return this.fixAttributeQuotes(this.fixInterpolations(this.html))
     },
     processedJs() {
-      return this.fixInterpolations(this.js)
+      return this.fixAttributeQuotes(this.fixInterpolations(this.js))
     },
   },
   methods: {
+    fixAttributeQuotes(code) {
+      return code.replace(/=~/g, '="').replace(/~([>\s])/g, '"$1')
+    },
     fixInterpolations(code) {
       return code.replace(/\[\[/g, '{{').replace(/\]\]/g, '}}')
     },

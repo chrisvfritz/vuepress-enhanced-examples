@@ -11,7 +11,7 @@ export default {
 <template>
   <VueExampleSimple
     html="
-      <div id=&quot;app&quot;>
+      <div id=~app~>
         <blog-posts></blog-posts>
       </div>
     "
@@ -30,7 +30,7 @@ export default {
             })
         },
         template: `
-          <div>
+          <div class=~test~>
             [[ posts ]]
           </div>
         `
