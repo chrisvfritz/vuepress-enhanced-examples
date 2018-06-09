@@ -73,4 +73,4 @@ And finally, because examples are referenced, rather than embedded directly in m
 
 ## Demos
 
-Check out some live demos by opening this doc in VuePress with `yarn dev`.
+Check out a [live demo here](http://vuepress-enhanced-examples.surge.sh/demos/intro.html).
