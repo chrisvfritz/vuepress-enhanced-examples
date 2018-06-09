@@ -48,6 +48,7 @@ export default {
     v-if="!disabled && code"
     :class="[
       $style.preWrapper,
+      `language-${lang}`,
       { [$style[`${jsStyle}Code`]]: lang === 'js' }
     ]"
   >
@@ -62,16 +63,13 @@ export default {
   </div>
 </template>
 
-<style src="prismjs/themes/prism-tomorrow.css">
-</style>
-
 <style lang="scss" module>
 .preWrapper {
   position: relative;
-}
 
-.pre {
-  margin: 0;
+  &::before {
+    display: none;
+  }
 }
 
 .es5Code {

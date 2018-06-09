@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vue-cli-service serve",
     "dev:e2e": "vue-cli-service test:e2e --mode=development",
+    "dev:vuepress": "vuepress dev tests/vuepress-integration",
     "build": "vue-cli-service build --target lib --name VueExampleSimple src/components/vue-example-simple.vue",
     "build:ci": "cross-env ANALYZE=true yarn build",
     "build:demo": "vue-cli-service build",
@@ -36,12 +37,15 @@
     "@vue/cli-plugin-e2e-cypress": "3.0.0-beta.15",
     "@vue/cli-plugin-eslint": "3.0.0-beta.15",
     "@vue/cli-service": "3.0.0-beta.15",
+    "@vue/component-compiler-utils": "^2.0.0",
     "@vue/eslint-config-prettier": "3.0.0-beta.15",
     "@vue/eslint-config-standard": "3.0.0-beta.15",
     "babel-loader": "8.0.0-beta.2",
     "cross-env": "5.1.x",
     "imagemin-lint-staged": "0.3.x",
     "lint-staged": "7.1.x",
+    "markdown-it": "^8.4.1",
+    "markdown-it-custom-block": "^0.1.1",
     "markdownlint-cli": "0.10.x",
     "node-sass": "4.9.x",
     "sass-loader": "7.0.x",
@@ -53,6 +57,7 @@
     "stylelint-scss": "3.1.x",
     "vue": "2.5.16",
     "vue-template-compiler": "2.5.16",
+    "vuepress": "^0.10.0",
     "webpack-bundle-analyzer": "2.13.x"
   }
 }

@@ -42,13 +42,11 @@ export default {
 <style lang="scss" module>
 .label {
   position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0.4em;
-  font-size: 0.8em;
-  line-height: 1;
-  color: #aaa;
-  text-transform: uppercase;
+  top: 0.8em;
+  right: 1em;
+  z-index: 3;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
 
   &.canToggle {
     cursor: pointer;

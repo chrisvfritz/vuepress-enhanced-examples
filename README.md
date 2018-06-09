@@ -1,3 +1,1 @@
 # Vue Example Components
-
-WIP

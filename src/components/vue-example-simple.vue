@@ -1,43 +1,34 @@
 <template>
-  <CodeTransformer
-    :html="processedHtml"
-    :js="processedJs"
-    :css="css"
-  >
-    <div slot-scope="transformedCode">
-      <template v-if="!linkOnly">
-        <CodeBlock
-          v-for="(code, lang) in transformedCode"
-          v-if="code"
-          :key="lang"
-          :lang="lang"
-          :code="code"
-          :disabled="$props[`${lang}Disabled`]"
-        />
-        <ExampleResult
-          v-if="!resultDisabled"
-          :html="processedHtml"
-          :js="processedJs"
-          :css="css"
-        />
-      </template>
-      <PlaygroundButton
-        v-if="!resultDisabled"
-        v-bind="transformedCode"
+  <div>
+    <template v-if="!linkOnly">
+      <CodeBlock
+        v-for="(code, lang) in langs"
+        v-if="code"
+        :key="lang"
+        :lang="lang"
+        :code="code"
+        :disabled="codeBlockDisabled(lang)"
       />
-    </div>
-  </CodeTransformer>
+      <ExampleResult
+        v-if="shouldRenderResult"
+        v-bind="langs"
+      />
+    </template>
+    <PlaygroundButton
+      v-if="shouldRenderResult"
+      v-bind="langs"
+    />
+  </div>
 </template>
 
 <script>
-import CodeTransformer from './code-transformer'
 import CodeBlock from './code-block'
 import ExampleResult from './example-result'
 import PlaygroundButton from './playground-button'
+import store from '@store'
 
 export default {
   components: {
-    CodeTransformer,
     CodeBlock,
     ExampleResult,
     PlaygroundButton,
@@ -47,7 +38,11 @@ export default {
       type: String,
       default: '',
     },
-    js: {
+    es5Js: {
+      type: String,
+      default: '',
+    },
+    modernJs: {
       type: String,
       default: '',
     },
@@ -67,7 +62,23 @@ export default {
       type: Boolean,
       default: false,
     },
+    htmlOnly: {
+      type: Boolean,
+      default: false,
+    },
+    jsOnly: {
+      type: Boolean,
+      default: false,
+    },
+    cssOnly: {
+      type: Boolean,
+      default: false,
+    },
     resultDisabled: {
+      type: Boolean,
+      default: false,
+    },
+    resultOnly: {
       type: Boolean,
       default: false,
     },
@@ -77,19 +88,37 @@ export default {
     },
   },
   computed: {
-    processedHtml() {
-      return this.fixAttributeQuotes(this.fixInterpolations(this.html))
+    js() {
+      return this[`${store.jsStyle}Js`]
     },
-    processedJs() {
-      return this.fixAttributeQuotes(this.fixInterpolations(this.js))
+    langs() {
+      return {
+        html: this.unmangle(this.html),
+        js: this.unmangle(this.js),
+        css: this.unmangle(this.css),
+      }
+    },
+    shouldRenderResult() {
+      return (
+        !this.resultDisabled && !this.htmlOnly && !this.jsOnly && !this.cssOnly
+      )
     },
   },
   methods: {
-    fixAttributeQuotes(code) {
-      return code.replace(/=~/g, '="').replace(/~([>\s])/g, '"$1')
+    unmangle(code) {
+      return code
+        .replace(/&quot;/g, '"')
+        .replace(/\[\[/g, '{{')
+        .replace(/\]\]/g, '}}')
     },
-    fixInterpolations(code) {
-      return code.replace(/\[\[/g, '{{').replace(/\]\]/g, '}}')
+    codeBlockDisabled(lang) {
+      return (
+        this[`${lang}Disabled`] ||
+        (this.htmlOnly && lang !== 'html') ||
+        (this.jsOnly && lang !== 'js') ||
+        (this.cssOnly && lang !== 'css') ||
+        this.resultOnly
+      )
     },
   },
 }
