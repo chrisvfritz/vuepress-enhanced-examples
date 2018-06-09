@@ -1,6 +1,6 @@
 <template>
   <div>
-    <template v-if="!linkOnly">
+    <template v-if="!playgroundOnly">
       <CodeBlock
         v-for="(code, lang) in blocks"
         v-if="code"
@@ -88,7 +88,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    linkOnly: {
+    playgroundOnly: {
       type: Boolean,
       default: false,
     },

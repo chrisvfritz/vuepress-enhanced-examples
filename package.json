@@ -1,11 +1,10 @@
 {
-  "name": "frontend",
+  "name": "vuepress-enhanced-examples",
   "version": "0.0.0",
-  "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue --fix . && stylelint --fix \"src/**/*.vue\" \"src/**/*.scss\" && markdownlint docs/*.md *.md && prettier --list-different --write \"**/*.{js,json,css,scss,vue,md}\"",
-    "dev": "vuepress dev src",
-    "build": "vuepress build src"
+    "dev": "vuepress dev",
+    "build": "vuepress build"
   },
   "gitHooks": {
     "pre-commit": "cross-env PRE_COMMIT=true lint-staged"
@@ -20,10 +19,11 @@
     "vuepress": "0.10.x"
   },
   "devDependencies": {
-    "@vue/cli-plugin-eslint": "^3.0.0-beta.16",
-    "@vue/eslint-config-prettier": "3.0.0-beta.16",
-    "@vue/eslint-config-standard": "3.0.0-beta.16",
     "cross-env": "5.1.x",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-vue-libs": "^3.0.0",
     "imagemin-lint-staged": "0.3.x",
     "lint-staged": "7.1.x",
     "markdownlint-cli": "0.10.x",
