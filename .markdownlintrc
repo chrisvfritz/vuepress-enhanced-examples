@@ -6,6 +6,8 @@
   // Disable line length restrictions, because editor soft-wrapping is being
   // used instead.
   "line-length": false,
+  "no-trailing-punctuation": false,
+  "no-inline-html": false,
   // ===
   // Prettier overrides
   // ===

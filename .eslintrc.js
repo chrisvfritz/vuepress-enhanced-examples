@@ -19,12 +19,10 @@ module.exports = {
     'no-console': process.env.PRE_COMMIT
       ? ['error', { allow: ['warn', 'error'] }]
       : 'off',
-    'no-useless-escape': 'off',
   },
   overrides: [
     {
-      files: ['src/**/*', 'tests/e2e/**/*'],
-      excludedFiles: 'app.config.js',
+      files: ['src/.vuepress/components/**/*'],
       parserOptions: {
         parser: 'babel-eslint',
         sourceType: 'module',

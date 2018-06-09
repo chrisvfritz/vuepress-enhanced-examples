@@ -5,7 +5,7 @@ function resolveSrc(_path) {
 }
 
 const aliases = {
-  '@store': 'src/store.js',
+  '@store': 'src/.vuepress/store.js',
 }
 
 module.exports = {
