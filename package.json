@@ -4,7 +4,8 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue --fix . && stylelint --fix \"src/**/*.vue\" \"src/**/*.scss\" && markdownlint docs/*.md *.md && prettier --list-different --write \"**/*.{js,json,css,scss,vue,md}\"",
     "dev": "vuepress dev",
-    "build": "vuepress build"
+    "predeploy": "vuepress build",
+    "deploy": "surge --project .vuepress/dist --domain vuepress-enhanced-examples.surge.sh"
   },
   "gitHooks": {
     "pre-commit": "cross-env PRE_COMMIT=true lint-staged"
