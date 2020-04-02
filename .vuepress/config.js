@@ -8,9 +8,12 @@ module.exports = {
     },
   },
   markdown: {
-    config: useMarkdownItVueExample,
+    extendMarkdown: useMarkdownItVueExample,
   },
   themeConfig: {
-    sidebar: [['/', 'Guide'], ['/demos/intro', 'DEMO: Introduction']],
+    sidebar: [
+      ['/', 'Guide'],
+      ['/demos/intro', 'DEMO: Introduction'],
+    ],
   },
 }

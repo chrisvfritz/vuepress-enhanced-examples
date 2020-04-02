@@ -11,31 +11,31 @@
     "pre-commit": "cross-env PRE_COMMIT=true lint-staged"
   },
   "dependencies": {
-    "@vue/component-compiler-utils": "2.0.x",
-    "buble": "0.19.x",
+    "@vue/component-compiler-utils": "3.1.1",
+    "buble": "0.20.0",
     "markdown-it-custom-block": "0.1.x",
-    "prettier": "1.13.x",
-    "prismjs": "1.14.x",
-    "strip-indent": "2.0.x",
-    "vuepress": "0.10.x"
+    "prettier": "2.0.2",
+    "prismjs": "1.19.0",
+    "strip-indent": "3.0.0",
+    "vuepress": "^1.4.0"
   },
   "devDependencies": {
-    "cross-env": "5.1.x",
-    "eslint": "^4.19.1",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-vue-libs": "^3.0.0",
-    "imagemin-lint-staged": "0.3.x",
-    "lint-staged": "7.1.x",
-    "markdownlint-cli": "0.10.x",
-    "node-sass": "4.9.x",
-    "sass-loader": "7.0.x",
-    "stylelint": "9.2.x",
-    "stylelint-config-css-modules": "1.2.x",
-    "stylelint-config-prettier": "3.2.x",
+    "cross-env": "7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-vue-libs": "^4.0.0",
+    "imagemin-lint-staged": "0.4.0",
+    "lint-staged": "10.1.1",
+    "markdownlint-cli": "0.22.0",
+    "sass": "^1.25.0",
+    "sass-loader": "^8.0.2",
+    "stylelint": "13.2.1",
+    "stylelint-config-css-modules": "2.2.0",
+    "stylelint-config-prettier": "8.0.1",
     "stylelint-config-recess-order": "2.0.x",
-    "stylelint-config-standard": "18.2.x",
-    "stylelint-scss": "3.1.x",
-    "yorkie": "^1.0.3"
+    "stylelint-config-standard": "20.0.0",
+    "stylelint-scss": "3.16.0",
+    "yorkie": "^2.0.0"
   }
 }

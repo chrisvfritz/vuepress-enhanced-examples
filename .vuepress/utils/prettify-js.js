@@ -1,10 +1,10 @@
 const prettier = require('prettier/standalone')
-const prettierParserBabylon = require('prettier/parser-babylon')
+const prettierParserBabel = require('prettier/parser-babel')
 
 module.exports = function prettifyJs(code) {
   return prettier.format(code, {
-    parser: 'babylon',
-    plugins: [prettierParserBabylon],
+    parser: 'babel',
+    plugins: [prettierParserBabel],
     printWidth: 80,
     tabWidth: 2,
     useTabs: false,
