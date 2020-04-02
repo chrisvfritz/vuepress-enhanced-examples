@@ -17,7 +17,7 @@
     "prettier": "2.0.2",
     "prismjs": "1.19.0",
     "strip-indent": "3.0.0",
-    "vuepress": "0.10.x"
+    "vuepress": "^1.4.0"
   },
   "devDependencies": {
     "cross-env": "7.0.2",
