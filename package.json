@@ -14,9 +14,9 @@
     "@vue/component-compiler-utils": "2.0.x",
     "buble": "0.19.x",
     "markdown-it-custom-block": "0.1.x",
-    "prettier": "1.13.x",
+    "prettier": "2.0.2",
     "prismjs": "1.14.x",
-    "strip-indent": "2.0.x",
+    "strip-indent": "3.0.0",
     "vuepress": "0.10.x"
   },
   "devDependencies": {
