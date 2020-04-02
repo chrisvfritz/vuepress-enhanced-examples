@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@vue/component-compiler-utils": "2.0.x",
-    "buble": "0.19.x",
+    "buble": "0.20.0",
     "markdown-it-custom-block": "0.1.x",
     "prettier": "2.0.2",
     "prismjs": "1.19.0",
