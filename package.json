@@ -36,6 +36,6 @@
     "stylelint-config-recess-order": "2.0.x",
     "stylelint-config-standard": "20.0.0",
     "stylelint-scss": "3.16.0",
-    "yorkie": "^1.0.3"
+    "yorkie": "^2.0.0"
   }
 }
